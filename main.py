@@ -1,5 +1,5 @@
 import random
-from general_functions import *
+from common_functions import *
 from cowsay import tux
 from ascii_art import *
 from time import time
