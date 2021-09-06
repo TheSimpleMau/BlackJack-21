@@ -157,7 +157,7 @@ Por lo que al final el ganador es...j''')
 def main():
     try:
         introduccion()
-    except KeyboardInterrupt:
+    except KeyboardInterrupt :
         pass
     jugar = 's'
     while jugar == 's':

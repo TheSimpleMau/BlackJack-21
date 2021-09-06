@@ -29,6 +29,13 @@ def inital_cards()->list:
     return cards
 
 
+def change_ace(points):
+    if points+11 <= 21:
+        return 11
+    else:
+        return 1
+
+
 def points(cartas:list)->int:
     cartas = "".join(cartas)
     puntos = []
@@ -40,10 +47,7 @@ def points(cartas:list)->int:
             puntos.append(int(num))
         elif num == ' ':
             if cartas[i+1] == 'A':
-                if sum(puntos)+11 <= 21:
-                    puntos.append(11)
-                else:
-                    puntos.append(1)
+                puntos.append(change_ace(sum(puntos)))
             if cartas[i+1] == 'J' or cartas[i+1] == 'R':
                 puntos.append(10)
         i+=1
