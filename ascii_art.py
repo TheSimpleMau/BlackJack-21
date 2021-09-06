@@ -90,6 +90,7 @@ TIE = """
         `-.....-'
 """
 
+
 #Código para cambiar nombres y generar diccionario con todas las cartas
 tipo = ['Spades', 'Diamonds', 'Hearts', 'Clubs']
 valor = ['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']

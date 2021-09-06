@@ -100,30 +100,35 @@ def result(cartas_jugador:list,cartas_maquina:list):
 
 def tutotrial():
     tux('Jugar BlackJack es muy fácil')
-    waiting(5)
+    waiting(7)
     tux('Lo único que tienes que hacer es juntar cartas hasta que tengas un total de 21 puntos o menos')
-    waiting(5)
+    waiting(7)
     tux('Si te pasas de 21 y tu oponente no, entonces pierdes')
-    waiting(5)
+    waiting(7)
     tux('E igual, el jugador que esté más cerca de 21, entonces ganará')
-    waiting(5)
+    waiting(7)
     tux('Listo, ahora ya sabes jugar, vamos a ello')
-    waiting(5)
+    waiting(7)
 
 
 def introduccion():
     tux(f'Bienvendio {getuser().capitalize()}!!!')
     waiting(5)
-    tux('En estaocación, vamos a jugar BlackJack!!!')
+    tux('En esta ocación, vamos a jugar BlackJack!!!')
     print(POKER_HAND)
     waiting(5)
     tux('Antes de empezar... Sabes como jugar?')
     print('''Si se jugar = S
 No sé jugar = N''')
-    tuto = input('La verdad es que...').lower()
+    try:
+        tuto = input('La verdad es que... ').lower()
+    except AssertionError:
+        tux('Escribe solo S para sí y N para no. Daré por hecho que no sabes jugar >:|')
+        waiting(7)
+        tuto = 'n'
     if tuto == 's':
-        waiting(0,Clean_screen=False)
         tux('Excelente, entonces empezemos con el juego')
+        waiting(5,False)
     else:
         tutotrial()
 
