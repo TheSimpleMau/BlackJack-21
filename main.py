@@ -163,18 +163,18 @@ def main():
     while jugar == 's':
         waiting(0)
         tux('Selecciona el modo de juego:')
-        print('''Jugador vs Jugador = 1
-Jugador vs Maquina = 2
+        print('''Jugador vs Maquina = 
+Jugador vs Jugador = 2
 Salir del juego = 3''')
         modo = int(input('Mi modo de juego será... '))
         if modo == 1:
             otra_vez_modo = 's'
             while otra_vez_modo == 's':
-                otra_vez_modo = game_two_players()
+                otra_vez_modo = game()
         elif modo == 2:
             otra_vez_modo = 's'
             while otra_vez_modo == 's':
-                otra_vez_modo = game()
+                otra_vez_modo = game_two_players()
         else:
             jugar = 'n'
     waiting(0)

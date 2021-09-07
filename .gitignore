@@ -1,3 +1,6 @@
 venv/
 __pycache__/
 latex/
+.DS_Store
+preuba_arte.py
+prueba.py

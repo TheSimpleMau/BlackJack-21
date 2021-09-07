@@ -39,6 +39,8 @@ def change_ace(points):
 def points(cartas:list)->int:
     cartas = "".join(cartas)
     puntos = []
+    as_in = False
+    as_in_counter = 0
     i=0
     for num in cartas:
         if num == '1':
@@ -47,10 +49,15 @@ def points(cartas:list)->int:
             puntos.append(int(num))
         elif num == ' ':
             if cartas[i+1] == 'A':
-                puntos.append(change_ace(sum(puntos)))
+                as_in = True
+                as_in_counter+=1
             if cartas[i+1] == 'J' or cartas[i+1] == 'R':
                 puntos.append(10)
         i+=1
+    if as_in == True:
+        k = 1
+        while k <= as_in_counter:
+            puntos.append(change_ace(sum(puntos)))
     return sum(puntos)
 
 
